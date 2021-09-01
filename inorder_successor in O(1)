@@ -71,3 +71,27 @@ while(root!=NULL)  //if root is NULL that means either we have our least differe
 
 return successor;
 }
+
+//recursion approach
+
+
+/**
+ * class Tree {
+ *     public:
+ *         int val;
+ *         Tree *left;
+ *         Tree *right;
+ * };
+ */
+int solve(Tree* root, int t) {
+    if(root==NULL)
+    {
+        return 1e9+7;
+    }
+    if(root->val > t)
+    {
+        return min(root->val,solve(root->left,t)); //finding better option and taking minimum of them
+    }
+    else
+    return solve(root->right,t);
+}
