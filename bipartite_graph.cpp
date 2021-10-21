@@ -73,7 +73,7 @@ vector<bool> vis(n,0);
          if(vis[k]) //checking for disconnect components of graphif its not covered in prev bfs
          continue;
          q1.push(k);
-     cl[0]=1;
+     cl[k]=1;
      while(!q1.empty())//bfs implementation
      {
          int top=q1.front();
